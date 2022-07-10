@@ -265,13 +265,6 @@ void main()
 				}
 			}
 		}
-		if (IsKeyJustUp(VK_OEM_2)) {
-			Vector3 plrPos = ENTITY::GET_ENTITY_COORDS(playerPed, true, true);
-			plrPos.x *= 2.0f;
-			plrPos.y *= 2.0f;
-			plrPos.z *= 2.0f;
-			TASK::TASK_DUEL(playerPed, MISC::GET_HASH_KEY("DUELING_CONFIG_PLAYER"), MISC::GET_HASH_KEY("WEAPON_REVOLVER_DOUBLEACTION"), GetClosestPed(), 0.25f, 0, plrPos.x, plrPos.y, plrPos.z, 0.0f, 1);
-		}
 
 
 		if (HUD::_UI_PROMPT_IS_VALID(dragPrompt)) {
@@ -369,4 +362,4 @@ void ScriptMain()
 	main();
 }
 
-// PED::_SET_PED_GRAPPLE_FLAG(ped, 4096, true); // breaking out of intimidate
+// PED::_SET_PED_GRAPPLE_FLAG(ped, 4096, true); // breaking out of intimidate (?)
