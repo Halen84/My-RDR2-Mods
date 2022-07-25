@@ -32,33 +32,33 @@ Prompt rotateRightPrompt;
 
 void register_prompt(Prompt &prompt, Hash control, const char* promptText)
 {
-	prompt = HUD::_UIPROMPT_REGISTER_BEGIN();
-	HUD::_UIPROMPT_SET_CONTROL_ACTION(prompt, control);
-	HUD::_UIPROMPT_SET_TEXT(prompt, MISC::VAR_STRING(10, "LITERAL_STRING", promptText));
-	HUD::_UIPROMPT_SET_PRIORITY(prompt, 1);
-	HUD::_UIPROMPT_SET_TRANSPORT_MODE(prompt, 0);
-	HUD::_UIPROMPT_SET_HOLD_INDEFINITELY_MODE(prompt);
-	HUD::_UIPROMPT_SET_ATTRIBUTE(prompt, 14, true); // Allows multiple prompts to be held at once
-	HUD::_UIPROMPT_SET_ATTRIBUTE(prompt, 34, true); // Allow multiple prompts of the same type? Idk. It just works.
-	HUD::_UIPROMPT_REGISTER_END(prompt);
-	HUD::_UIPROMPT_SET_VISIBLE(prompt, false);
-	HUD::_UIPROMPT_SET_ENABLED(prompt, false);
+	prompt = HUD::_UI_PROMPT_REGISTER_BEGIN();
+	HUD::_UI_PROMPT_SET_CONTROL_ACTION(prompt, control);
+	HUD::_UI_PROMPT_SET_TEXT(prompt, MISC::VAR_STRING(10, "LITERAL_STRING", promptText));
+	HUD::_UI_PROMPT_SET_PRIORITY(prompt, 1);
+	HUD::_UI_PROMPT_SET_TRANSPORT_MODE(prompt, 0);
+	HUD::_UI_PROMPT_SET_HOLD_INDEFINITELY_MODE(prompt);
+	HUD::_UI_PROMPT_SET_ATTRIBUTE(prompt, 14, true); // Allows multiple prompts to be held at once
+	HUD::_UI_PROMPT_SET_ATTRIBUTE(prompt, 34, true); // Allow multiple prompts of the same type? Idk. It just works.
+	HUD::_UI_PROMPT_REGISTER_END(prompt);
+	HUD::_UI_PROMPT_SET_VISIBLE(prompt, false);
+	HUD::_UI_PROMPT_SET_ENABLED(prompt, false);
 }
 
 void toggle_prompts(bool enabled)
 {
 	// If ascendPrompt is valid, then all of them are valid
-	if (HUD::_UIPROMPT_IS_VALID(ascendPrompt)) {
-		HUD::_UIPROMPT_SET_VISIBLE(ascendPrompt, enabled);
-		HUD::_UIPROMPT_SET_ENABLED(ascendPrompt, enabled);
-		HUD::_UIPROMPT_SET_VISIBLE(descendPrompt, enabled);
-		HUD::_UIPROMPT_SET_ENABLED(descendPrompt, enabled);
-		HUD::_UIPROMPT_SET_VISIBLE(forwardPrompt, enabled);
-		HUD::_UIPROMPT_SET_ENABLED(forwardPrompt, enabled);
-		HUD::_UIPROMPT_SET_VISIBLE(rotateLeftPrompt, enabled);
-		HUD::_UIPROMPT_SET_ENABLED(rotateLeftPrompt, enabled);
-		HUD::_UIPROMPT_SET_VISIBLE(rotateRightPrompt, enabled);
-		HUD::_UIPROMPT_SET_ENABLED(rotateRightPrompt, enabled);
+	if (HUD::_UI_PROMPT_IS_VALID(ascendPrompt)) {
+		HUD::_UI_PROMPT_SET_VISIBLE(ascendPrompt, enabled);
+		HUD::_UI_PROMPT_SET_ENABLED(ascendPrompt, enabled);
+		HUD::_UI_PROMPT_SET_VISIBLE(descendPrompt, enabled);
+		HUD::_UI_PROMPT_SET_ENABLED(descendPrompt, enabled);
+		HUD::_UI_PROMPT_SET_VISIBLE(forwardPrompt, enabled);
+		HUD::_UI_PROMPT_SET_ENABLED(forwardPrompt, enabled);
+		HUD::_UI_PROMPT_SET_VISIBLE(rotateLeftPrompt, enabled);
+		HUD::_UI_PROMPT_SET_ENABLED(rotateLeftPrompt, enabled);
+		HUD::_UI_PROMPT_SET_VISIBLE(rotateRightPrompt, enabled);
+		HUD::_UI_PROMPT_SET_ENABLED(rotateRightPrompt, enabled);
 	}
 }
  #pragma endregion
